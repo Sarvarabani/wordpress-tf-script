@@ -1,6 +1,6 @@
 #creating ec2 instance ec2.tf
-resource "aws_instance""instance1"{
-ami="ami-09b91b4166e3eda84"
+resource "aws_instance" "instance1"{
+ami= "ami-09b91b4166e3eda84"
 instance_type="t2.small"
 key_name="kesava"
 vpc_security_group_ids=["${aws_security_group.demosg.id}"]
@@ -8,6 +8,6 @@ subnet_id=aws_subnet.public-subnet-1.id
 associate_public_ip_address=true
 user_data=file("data.sh")
 tags={
-Name="my public insatance1"
+  Name="my public insatance1"
 }
 }
